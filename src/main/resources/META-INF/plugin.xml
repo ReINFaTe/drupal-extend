@@ -45,6 +45,12 @@
                 bundle="messages.DrupalExtendBundle"
                 parentId="reference.webide.settings.project.settings.php"
                 nonDefaultProject="true"/>
+        <intentionAction>
+            <language>PHP</language>
+            <className>com.github.nvelychenko.drupalextend.intention.AddDependencyInjectionIntention</className>
+            <category>PHP</category>
+            <descriptionDirectoryName>AddDependencyInjectionIntention</descriptionDirectoryName>
+        </intentionAction>
     </extensions>
 
     <extensions defaultExtensionNs="com.jetbrains.php">

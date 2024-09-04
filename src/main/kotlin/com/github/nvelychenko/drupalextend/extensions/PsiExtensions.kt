@@ -45,6 +45,19 @@ fun PhpClass.isSuperInterfacesOf(interfaces: Array<PhpClass>): Boolean {
     return isInstanceOf
 }
 
+fun PhpClass.isInstanceOf(instance: PhpClass): Boolean {
+    var isInstanceOf = false
+    PhpClassHierarchyUtils.processSupers(this, true, true) {
+        if (PhpClassHierarchyUtils.classesEqual(instance, it)) {
+            isInstanceOf = true
+        }
+
+        return@processSupers !isInstanceOf
+    }
+
+    return isInstanceOf
+}
+
 fun LeafPsiElement.hasDrupalTheme(): Boolean {
     return (parent as? StringLiteralExpression)?.hasDrupalTheme() ?: false
 }
